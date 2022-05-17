@@ -1,19 +1,21 @@
 <template>
   <header class="header">
-    <div class="header__logo">
-      <img src="../assets/img/dc-logo.png" alt="" />
+    <div class="header__container">
+      <div class="header__logo">
+        <img src="../assets/img/dc-logo.png" alt="" />
+      </div>
+      <nav>
+        <ul class="header__menu">
+          <li
+            v-for="(element, index) in menuArray"
+            :key="index"
+            :class="element.active === true ? 'active' : ''"
+          >
+            <a href="">{{ element.text }}</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul class="header__menu">
-        <li
-          v-for="(element, index) in menuArray"
-          :key="index"
-          :class="element.active === true ? 'active' : ''"
-        >
-          <a href="">{{ element.text }}</a>
-        </li>
-      </ul>
-    </nav>
   </header>
 </template>
 
@@ -80,20 +82,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$text-color: black;
+$text-menu-color: black;
 $blue-color: #0282f9;
 
 .header {
   width: 100%;
-  height: 130px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.5rem;
   background-color: white;
 
+  &__container {
+    width: 85%;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+
   &__logo {
-    min-width: 450px;
+    min-width: 500px;
 
     img {
       width: 80px;
@@ -106,18 +113,22 @@ $blue-color: #0282f9;
 
     li {
       margin: 0.4rem;
-      padding: 3.35rem 0.4rem;
+      padding: 3.05rem 0.4rem;
       text-transform: uppercase;
       border-bottom: 4px solid transparent;
 
       &.active {
-        border-color: #0282f9;
+        border-color: $blue-color;
+      }
+
+      &.active a {
+        color: $blue-color;
       }
 
       a {
-        color: $text-color;
+        color: $text-menu-color;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 0.9rem;
       }
     }
