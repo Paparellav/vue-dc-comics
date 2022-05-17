@@ -1,0 +1,130 @@
+<template>
+  <header class="header">
+    <div class="header__logo">
+      <img src="../assets/img/dc-logo.png" alt="" />
+    </div>
+    <nav>
+      <ul class="header__menu">
+        <li
+          v-for="(element, index) in menuArray"
+          :key="index"
+          :class="element.active === true ? 'active' : ''"
+        >
+          <a href="">{{ element.text }}</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</template>
+
+<script>
+export default {
+  name: "AppHeader",
+  data: function () {
+    return {
+      menuArray: [
+        {
+          url: "#",
+          text: "Characters",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "Comics",
+          active: true,
+        },
+        {
+          url: "#",
+          text: "Movies",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "Tv",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "Games",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "Collectibles",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "Videos",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "Fans",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "News",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "Shop",
+          active: false,
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+$text-color: black;
+$blue-color: #0282f9;
+
+.header {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  background-color: white;
+
+  &__logo {
+    min-width: 450px;
+
+    img {
+      width: 80px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0.4rem;
+      padding: 3.35rem 0.4rem;
+      text-transform: uppercase;
+      border-bottom: 4px solid transparent;
+
+      &.active {
+        border-color: #0282f9;
+      }
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+ul {
+  list-style: none;
+}
+</style>
