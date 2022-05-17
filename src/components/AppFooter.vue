@@ -1,6 +1,6 @@
 <template>
-  <footer class="footer">
-    <div class="footer__container">
+  <div class="footer-top">
+    <div class="footer-top__container">
       <div class="footer-col">
         <h3 class="title">DC Comics</h3>
         <ul>
@@ -26,10 +26,21 @@
           </li>
         </ul>
       </div>
-      <div class="footer-col"></div>
-      <div class="footer-col"></div>
+      <div class="footer-col">
+        <h3 class="title">Sites</h3>
+        <ul>
+          <li v-for="(element, index) in thirdArray" :key="index">
+            <a href="">{{ element.text }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div>
+          <img src="../assets/img/dc-logo-bg.png" alt="" />
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>
@@ -131,6 +142,33 @@ export default {
           active: false,
         },
       ],
+      thirdArray: [
+        {
+          url: "#",
+          text: "DC",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "MAD Magazine",
+          active: true,
+        },
+        {
+          url: "#",
+          text: "DC Kids",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "DC Universe",
+          active: false,
+        },
+        {
+          url: "#",
+          text: "DC Power Visa",
+          active: false,
+        },
+      ],
     };
   },
 };
@@ -139,11 +177,12 @@ export default {
 <style lang="scss" scoped>
 $text-color: white;
 
-.footer {
+.footer-top {
   width: 100%;
   height: 380px;
   background-image: url("../assets/img/footer-bg.jpg");
   background-size: cover;
+  overflow: hidden;
 
   .footer-col {
     margin: 0 2rem;
@@ -177,6 +216,13 @@ $text-color: white;
           color: $text-color;
         }
       }
+    }
+
+    img {
+      width: 100%;
+      position: relative;
+      bottom: 90px;
+      left: 210px;
     }
   }
 }

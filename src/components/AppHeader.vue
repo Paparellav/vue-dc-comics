@@ -113,7 +113,7 @@ $blue-color: #0282f9;
 
     li {
       margin: 0.4rem;
-      padding: 3.05rem 0.4rem;
+      padding: 3rem 0.4rem;
       text-transform: uppercase;
       border-bottom: 4px solid transparent;
 
