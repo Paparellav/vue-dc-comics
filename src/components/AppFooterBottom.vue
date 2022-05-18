@@ -31,6 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../style/variables.scss";
+@import "../style/variables.scss";
+
 .footer-bottom {
   width: 100%;
   background-color: #303030;
@@ -40,17 +43,20 @@ export default {
     height: 100px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
-    a {
-      padding: 0.8rem 1rem;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      border: 2px solid #0a72d4;
-      background-color: #303030;
-      color: white;
+    .sign-up-btn {
+      min-width: 750px;
+      a {
+        padding: 0.8rem 1rem;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border: 2px solid $blue-color;
+        background-color: #303030;
+        color: $text-color;
+      }
     }
 
     .follow-us-section {

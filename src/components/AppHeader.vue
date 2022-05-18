@@ -10,6 +10,7 @@
             v-for="(element, index) in menuArray"
             :key="index"
             :class="element.active === true ? 'active' : ''"
+            @click="checkCurrentSection(index)"
           >
             <a href="">{{ element.text }}</a>
           </li>
@@ -76,21 +77,29 @@ export default {
           active: false,
         },
       ],
+      // currentSection: 0,
+      // methods: {
+      //   checkCurrentSection(index) {
+      //     if (this.currentSection === index) {
+      //       this.menuArray.active = true;
+      //     }
+      //   },
+      // },
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-$text-menu-color: black;
-$blue-color: #0282f9;
+@import "../style/variables.scss";
+@import "../style/variables.scss";
 
 .header {
   width: 100%;
   background-color: white;
 
   &__container {
-    width: 85%;
+    width: 80%;
     height: 120px;
     margin: 0 auto;
     display: flex;
@@ -133,9 +142,5 @@ $blue-color: #0282f9;
       }
     }
   }
-}
-
-ul {
-  list-style: none;
 }
 </style>

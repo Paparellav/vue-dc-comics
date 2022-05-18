@@ -44,7 +44,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$blue-color: #0282f9;
+@import "../style/variables.scss";
+@import "../style/variables.scss";
 
 .bonus-section {
   width: 100%;
@@ -52,15 +53,17 @@ $blue-color: #0282f9;
 
   .bonus__container {
     width: 60%;
-    margin: auto;
+    margin: 0 auto;
     height: 150px;
     display: flex;
+    justify-content: center;
     align-items: center;
 
     ul {
       display: flex;
 
       li {
+        width: calc(100% / 5);
         margin-right: 1rem;
         display: flex;
         align-items: center;

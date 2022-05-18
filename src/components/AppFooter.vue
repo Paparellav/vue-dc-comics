@@ -34,7 +34,7 @@
           </li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="footer-col-img">
         <div>
           <img src="../assets/img/dc-logo-bg.png" alt="" />
         </div>
@@ -175,23 +175,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$text-color: white;
+@import "../style/variables.scss";
+@import "../style/variables.scss";
 
 .footer-top {
   width: 100%;
   height: 380px;
   background-image: url("../assets/img/footer-bg.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
 
   .footer-col {
-    margin: 0 2rem;
+    margin-right: 4rem;
+  }
+
+  .footer-col-img {
+    margin-left: 8rem;
+    img {
+      position: relative;
+      bottom: 90px;
+    }
   }
 
   &__container {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
     .title {
       padding-top: 1.3rem;
@@ -216,13 +228,6 @@ $text-color: white;
           color: $text-color;
         }
       }
-    }
-
-    img {
-      width: 100%;
-      position: relative;
-      bottom: 90px;
-      left: 210px;
     }
   }
 }
