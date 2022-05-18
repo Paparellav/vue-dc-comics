@@ -47,7 +47,7 @@ export default {
     align-items: center;
 
     .sign-up-btn {
-      min-width: 750px;
+      min-width: 600px;
       a {
         padding: 0.8rem 1rem;
         text-decoration: none;

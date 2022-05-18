@@ -1,7 +1,7 @@
 <template>
   <div class="thumb">
     <div class="thumb__img">
-      <img :src="thumbsObj.thumb" alt="thumbsObj.series" />
+      <img :src="thumbsObj.thumb" :alt="thumbsObj.series" />
     </div>
     <h3>{{ thumbsObj.series }}</h3>
   </div>
@@ -24,12 +24,18 @@ export default {
 
   &__img {
     margin-top: 1rem;
+    width: 160px;
+    height: 160px;
+
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
   }
   h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: lighter;
     text-transform: uppercase;
     margin-top: 0.5rem;

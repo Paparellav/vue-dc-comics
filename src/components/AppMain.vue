@@ -145,7 +145,7 @@ export default {
   }
 
   &__container {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding: 4rem 0;
     display: flex;
